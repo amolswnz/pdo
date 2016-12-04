@@ -1,12 +1,10 @@
 <?php 
-function getRandomDate($start_date, $end_date, $returnFormat="Y-m-d H:i:s") {
+function getRandomDate($startDate, $endDate, $returnFormat="Y-m-d H:i:s") {
     // Convert to timetamps
-    $min = strtotime($start_date);
-    $max = strtotime($end_date);
-
+    $min = strtotime($startDate);
+    $max = strtotime($endDate);
     // Generate random number using above bounds
     $val = rand($min, $max);
-
     // Convert back to desired date format
     return date($returnFormat, $val);
 }

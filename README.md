@@ -11,7 +11,7 @@ Examples of PDO queries in PHP
 
 ####Helper functions not related to PDO
 `function getRandomDate($start_date, $end_date, $returnFormat="Y-m-d H:i:s")`
-Function to generate Random date
+Function to generate Random date between startDate and endDate
 
 `function getInitials($string)`
 Get initials from full name

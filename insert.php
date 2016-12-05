@@ -1,5 +1,5 @@
 <?php 
-    include 'connect-inc.php';
+    require_once 'connect-inc.php';
 
     /* Insert data into table
         Conditions 

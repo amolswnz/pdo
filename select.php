@@ -1,5 +1,5 @@
 <?php 
-    include 'connect-inc.php';
+    require_once 'connect-inc.php';
 
     $sql = "SELECT FROM tableName WHERE id = ?";
     $stmt = $pdo->prepare($sql);

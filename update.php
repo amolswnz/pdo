@@ -1,5 +1,5 @@
 <?php 
-    include 'connect-inc.php';
+    require_once 'connect-inc.php';
 
     $sql = "UPDATE tableName SET field1=?, field2=? WHERE id = ?";
     $stmt = $pdo->prepare($sql);

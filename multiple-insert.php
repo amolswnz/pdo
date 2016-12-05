@@ -1,5 +1,5 @@
 <?php 
-    include 'connect-inc.php';
+    require_once 'connect-inc.php';
 
     /* Inserting multiple values in database using single query 
         number of fields and number of values to be inserted should be equal

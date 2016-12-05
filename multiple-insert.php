@@ -30,10 +30,8 @@
 function placeholders($dataArray) {
     $result = array();
     $count = sizeof($dataArray);
-    if($count > 0){
-        for($x=0; $x < $count; $x++){
-            $result[] = "?";
-        }
+    for($x=0; $x < $count; $x++){
+        $result[] = "?";
     }
-    return implode("?", $result);
+    return implode(",", $result);
 }

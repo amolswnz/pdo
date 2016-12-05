@@ -21,4 +21,4 @@ Get initials from full name
 Generate random password
 
 ####DateTime function reference
-The Object Oriented approach to handle dates in PHP
+The Object Oriented approach to handle dates in PHP `date-time.php`

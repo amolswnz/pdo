@@ -14,3 +14,13 @@
     } catch(PDOException $e) {
         die("<div class='alert alert-danger'>ERROR : " . $e->getMessage() . "</div>");
     }
+
+/* Helper function to generate placeholders */
+function placeholders($dataArray) {
+    $result = array();
+    $count = sizeof($dataArray);
+    for($x=0; $x < $count; $x++) {
+        $result[] = "?";
+    }
+    return implode(",", $result);
+}

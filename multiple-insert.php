@@ -25,13 +25,3 @@
             echo "<div class='alert alert-error'>ERROR : " . $e->getMessage() . "</div>";
         }
     $pdo->commit();
-
-/* Helper function to generate placeholders */
-function placeholders($dataArray) {
-    $result = array();
-    $count = sizeof($dataArray);
-    for($x=0; $x < $count; $x++){
-        $result[] = "?";
-    }
-    return implode(",", $result);
-}

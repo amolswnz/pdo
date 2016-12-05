@@ -5,7 +5,7 @@
         Conditions 
             The form should have same attribute name as the database table field name
             There should be no additional field in the form which does not belong to any database table field 
-        eg. If there is a field name in database table as userName the input tag in form should should name='userName'
+        eg. If there is a field name in database table as userName the input tag in form should have name='userName'
     */
     $keys = implode(",", array_keys($_POST));
     $placeholders = placeholders($_POST);

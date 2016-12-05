@@ -1,22 +1,23 @@
 <?php 
     include 'connect-inc.php';
 
-    /* Inserting multiple values in database using single query */
+    /* Inserting multiple values in database using single query 
+        number of fields and number of values to be inserted should be equal
+        e.g. For 5 fields the $insertData each array should have 5 values
+    */
+    $dataFields = array('field1', 'field2', 'field3');
 
-    $dataFields = array('field1', 'field2', ...);
-
-    $insertData[] = array('field1' => 'value1', 'field2' => 'value2', ....);
-    $insertData[] = array('field1' => 'value3', 'field2' => 'value4', ....);
+    $insertData[] = array('field1' => 'value1', 'field2' => 'value2', 'field3' => 'value3');
+    $insertData[] = array('field1' => 'value4', 'field2' => 'value5', 'field3' => 'value6');
 
     $pdo->beginTransaction();
         $dataToInsert = array();
         foreach($insertData as $d){
-            $questionMarks[] = '('  . placeholders('?', sizeof($d)) . ')';
+            $questionMarks[] = '('  . placeholders($d) . ')';
             $dataToInsert = array_merge($dataToInsert, array_values($d));
         }
 
-        $sql = "INSERT INTO tableName (" . implode(",", $dataFields ) . ") VALUES " . implode(',', $questionMarks);
-
+        $sql = "INSERT INTO xtable (" . implode(",", $dataFields ) . ") VALUES " . implode(',', $questionMarks);
         $stmt = $pdo->prepare($sql);
         try {
             $stmt->execute($dataToInsert);
@@ -25,14 +26,13 @@
         }
     $pdo->commit();
 
-
-
 /* Helper function to generate placeholders */
-function placeholders($text, $count=0, $separator=","){
+function placeholders($dataArray, $separator=","){
     $result = array();
+    $count = sizeof($dataArray);
     if($count > 0){
-        for($x=0; $x<$count; $x++){
-            $result[] = $text;
+        for($x=0; $x < $count; $x++){
+            $result[] = "?";
         }
     }
     return implode($separator, $result);

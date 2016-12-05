@@ -31,7 +31,7 @@ function getRandomPassword($length = 10, $special="!@%#")
 
     do {
         $password = str_shuffle($password);         // Shuffles the characters of generated password
-        if( ! in_array($password[0], str_split($special)) && ! in_array($password[0], str_split($digits)) )
+        if( ! ( in_array($password[0], str_split($special)) || in_array($password[0], str_split($digits)) ) ) 
             return $password;
         // IF first character of the password is not a special or a digit THEN return password
         // ELSE loop again 

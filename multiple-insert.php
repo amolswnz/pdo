@@ -27,7 +27,7 @@
     $pdo->commit();
 
 /* Helper function to generate placeholders */
-function placeholders($dataArray, $separator=","){
+function placeholders($dataArray) {
     $result = array();
     $count = sizeof($dataArray);
     if($count > 0){
@@ -35,5 +35,5 @@ function placeholders($dataArray, $separator=","){
             $result[] = "?";
         }
     }
-    return implode($separator, $result);
+    return implode("?", $result);
 }

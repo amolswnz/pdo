@@ -8,10 +8,9 @@
         eg. If there is a field name in database table as userName the input tag in form should have name='userName'
     */
     $keys = implode(",", array_keys($_POST));
-    $placeholders = placeholders($_POST);
+    $questionMarks = placeholders($_POST);
     
-    $sql = "INSERT INTO xtable ($keys) VALUES ($placeholders)";
-    
+    $sql = "INSERT INTO xtable ($keys) VALUES ($questionMarks)";
     $stmt = $pdo->prepare($sql);
 
     $count=1;

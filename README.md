@@ -9,7 +9,7 @@ Examples of PDO queries in PHP
  6. Inserting multiple rows in databsase `multiple-insert.php`
 
 * Insert files require `placeholders($dataArray)` function which generates ?,? depending on the inputted array<br>
-this function is included in `connect-inc.php`*
+this function is included in `connect-inc.php`
 
 ------
 ###Following files are NOT related to PDO 

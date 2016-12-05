@@ -21,7 +21,6 @@ function getInitials($string)
     return $acronym;
 }
 
-
 function getRandomPassword($length = 10, $special="!@%#") 
 {
     $letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUWXYZ";

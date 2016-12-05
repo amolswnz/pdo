@@ -8,6 +8,7 @@ Examples of PDO queries in PHP
  5. Deleting data `delete.php`
  6. Inserting multiple rows in databsase `multiple-insert.php`
 
+------
 
 ####Helper functions not related to PDO
 `function getRandomDate($startDate, $endDate, $returnFormat="Y-m-d H:i:s")`
@@ -18,3 +19,6 @@ Get initials from full name
 
 `function getRandomPassword($length = 10, $special="!@%#")`
 Generate random password
+
+####DateTime function reference
+The Object Oriented approach towards handling date in PHP

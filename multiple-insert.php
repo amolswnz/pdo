@@ -17,7 +17,7 @@
             $dataToInsert = array_merge($dataToInsert, array_values($d));
         }
 
-        $sql = "INSERT INTO xtable (" . implode(",", $dataFields ) . ") VALUES " . implode(',', $questionMarks);
+        $sql = "INSERT INTO xtable (" . implode(",", $dataFields) . ") VALUES " . implode(',', $questionMarks);
         $stmt = $pdo->prepare($sql);
         try {
             $stmt->execute($dataToInsert);

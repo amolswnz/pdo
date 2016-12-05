@@ -1,20 +1,23 @@
 <?php 
     include 'connect-inc.php';
 
-    /* Inserting multiple values in database using single query */
+    /* Insert data into table
+        Conditions 
+            The form should have same attribute name as the database table field name
+            There should be no additional field in the form which does not belong to any database table field 
+        eg. If there is a field name in database table as userName the input tag in form should should name='userName'
+    */
+    $keys = implode(",", array_keys($_POST));
+    $placeholders = placeholders($_POST);
+    
+    $sql = "INSERT INTO xtable ($keys) VALUES ($placeholders)";
+    
+    $stmt = $pdo->prepare($sql);
 
-    $dataToInsert = array();
-    foreach($insertData as $d){
-        $questionMarks[] = '('  . placeholders('?', sizeof($d)) . ')';
-        $dataToInsert = array_merge($dataToInsert, array_values($d));
+    $count=1;
+    foreach ($_POST as $value) {
+        $stmt->bindValue($count++, $value);
     }
 
-    $sql = "INSERT INTO tableName(field1, field2, ...) VALUES (?,?,...)";
-
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(1, "value1");
-    $stmt->bindValue(2, "value2");
-    // ...
     $stmt->execute();
-
     $lastId = $pdo->lastInsertId();     // Returns last inserted id

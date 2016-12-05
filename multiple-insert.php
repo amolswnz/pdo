@@ -12,9 +12,9 @@
 
     $pdo->beginTransaction();
         $dataToInsert = array();
-        foreach($insertData as $d){
-            $questionMarks[] = '('  . placeholders($d) . ')';
-            $dataToInsert = array_merge($dataToInsert, array_values($d));
+        foreach($insertData as $dataValue){
+            $questionMarks[] = '('  . placeholders($dataValue) . ')';
+            $dataToInsert = array_merge($dataToInsert, array_values($dataValue));
         }
 
         $sql = "INSERT INTO xtable (" . implode(",", $dataFields) . ") VALUES " . implode(',', $questionMarks);

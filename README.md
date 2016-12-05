@@ -9,6 +9,7 @@ Examples of PDO queries in PHP
  6. Inserting multiple rows in databsase `multiple-insert.php`
 
 ------
+###Following files are NOT related to PDO 
 
 ####DateTime function reference `date-time.php`
 The Object Oriented approach to handle dates in PHP
@@ -19,7 +20,7 @@ The Object Oriented approach to handle dates in PHP
  * Add/Subtract interval to a date
  * Repeat Interval
 
-####Helper functions not related to PDO `functions.php`
+####Helper functions `functions.php`
 `function getRandomDate($startDate, $endDate, $returnFormat="Y-m-d H:i:s")`
 Function to generate Random date between startDate and endDate
 

@@ -21,11 +21,8 @@ The Object Oriented approach to handle dates in PHP
  * Repeat Interval
 
 ####Helper functions `functions.php`
-`function getRandomDate($startDate, $endDate, $returnFormat="Y-m-d H:i:s")`
-Function to generate Random date between startDate and endDate
+Generates random date between startDate & endDate `getRandomDate($startDate, $endDate, $returnFormat="Y-m-d H:i:s")`
 
-`function getInitials($string)`
-Get initials from full name
+Get initials from full name `getInitials($string)` 
 
-`function getRandomPassword($length = 10, $special="!@%#")`
-Generate random password
+Generate random password `getRandomPassword($length = 10, $special="!@%#")` 

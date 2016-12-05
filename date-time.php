@@ -41,3 +41,5 @@
     foreach($period as $dt) {
         echo $dt->format('l, F j, Y'), "<br>";    // Displaying the date
     }
+
+    // Function manipulation coming soon

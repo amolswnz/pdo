@@ -10,7 +10,7 @@ Examples of PDO queries in PHP
 
 ------
 
-####Helper functions not related to PDO
+####Helper functions not related to PDO `functions.php`
 `function getRandomDate($startDate, $endDate, $returnFormat="Y-m-d H:i:s")`
 Function to generate Random date between startDate and endDate
 
@@ -20,5 +20,11 @@ Get initials from full name
 `function getRandomPassword($length = 10, $special="!@%#")`
 Generate random password
 
-####DateTime function reference
-The Object Oriented approach to handle dates in PHP `date-time.php`
+####DateTime function reference `date-time.php`
+The Object Oriented approach to handle dates in PHP
+ * Set default TimeZone
+ * Create date from various formats
+ * Modify created date 
+ * Compare two dates
+ * Add/Subtract interval to a date
+ * Repeat Interval

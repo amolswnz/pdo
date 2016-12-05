@@ -1,9 +1,7 @@
 <?php 
     include 'connect-inc.php';
 
-    /* 
-       Inserting multiple values in database using single query
-    */
+    /* Inserting multiple values in database using single query */
 
     $dataFields = array('field1', 'field2', ...);
 
@@ -29,9 +27,7 @@
 
 
 
-/*
-    Helper function to generate placeholders
-*/
+/* Helper function to generate placeholders */
 function placeholders($text, $count=0, $separator=","){
     $result = array();
     if($count > 0){

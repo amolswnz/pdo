@@ -1,10 +1,7 @@
 <?php 
     include 'connect-inc.php';
 
-    /* 
-       Inserting multiple values in database using single query
-    */
-
+    /* Inserting multiple values in database using single query */
 
     $dataToInsert = array();
     foreach($insertData as $d){

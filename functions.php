@@ -1,5 +1,6 @@
 <?php 
-function getRandomDate($startDate, $endDate, $returnFormat="Y-m-d H:i:s") {
+function getRandomDate($startDate, $endDate, $returnFormat="Y-m-d H:i:s") 
+{
     // Convert to timetamps
     $min = strtotime($startDate);
     $max = strtotime($endDate);
@@ -9,17 +10,20 @@ function getRandomDate($startDate, $endDate, $returnFormat="Y-m-d H:i:s") {
     return date($returnFormat, $val);
 }
 
-function getInitials($string) {
+function getInitials($string) 
+{
     $acronym = "";
     $words = explode(" ", $string);
 
     foreach ($words as $word) {
-        $acronym .= $word[0];
+        $acronym .= strtoupper($word[0]) . ".";
     }
     return $acronym;
 }
 
-function getRandomPassword($length = 10, $special="!@%#") {
+
+function getRandomPassword($length = 10, $special="!@%#") 
+{
     $letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUWXYZ";
     $digits = "1234567890";
     $password = substr(str_shuffle($letters), 0, $length-4);    // Random letters

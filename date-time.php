@@ -42,4 +42,13 @@
         echo $dt->format('l, F j, Y'), "<br>";    // Displaying the date
     }
 
+    // Add intervals to show total interval
+    $total = new DateTime('0000-00-00');
+    $totalClone = clone $total;
+    $total->add($date1);
+    $total->add($date2);
+    $total->add($tcs1);
+    echo "<br>Total interval : ", $totalClone->diff($total)->format("%y year %m month %d days"), "\n";
+
+
     // Function manipulation coming soon

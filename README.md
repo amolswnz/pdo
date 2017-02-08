@@ -27,3 +27,7 @@ The Object Oriented approach to handle dates in PHP
  * Generates random date between startDate and endDate <br> `getRandomDate($startDate, $endDate, $returnFormat="Y-m-d H:i:s")`
  * Get initials from full name <br> `getInitials($string)`  
  * Generate random password <br> `getRandomPassword($length = 10, $special="!@%#")` 
+ 
+ ####Adding Timestamp to databases
+ALTER TABLE xtablename ADD `dateCreated` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE xtablename ADD `dateUpdated` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;

@@ -10,10 +10,9 @@
 
     // For selecting data using IN (..) query
 
-    $sql = "SELECT * FROM tableName WHERE id IN( $inQuery )";
+    $inQuery = implode(',', array_fill(0, count($idsDataArray), '?'));
 
-    $inQuery = implode(',', array_fill(0, count($idsArray), '?'));
+    $sql = "SELECT * FROM tableName WHERE id IN( $inQuery )";
     $stmt = $pdo->prepare($sql);
     $stmt->execute($idsArray);
-
     $result = $stmt->fetchAll();

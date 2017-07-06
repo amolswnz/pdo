@@ -23,6 +23,7 @@
     $diff = $date1->diff($date2);   // $diff->invert = 0 
     $diff = $date2->diff($date1);   // This returns $diff->invert = 1 as $date1 > $date2
 
+    echo $date1->diff($date2)->d; // Return number of days difference other formats are y m d h i s
 
     $date = new DateTime('2016-12-20');
     $interval = new DateInterval('P1Y2M3DT4H5M6S'); 
